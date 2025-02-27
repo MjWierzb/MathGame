@@ -22,11 +22,11 @@ S - Subtraction
 M - Multiplication
 D - Division
 Q - Quit the program");
+
 Console.WriteLine("----------------------");
 
 /* once menu option is chosen, run method associated with it*/
 var gameSelected = Console.ReadLine();
-
 if (gameSelected.Trim().ToLower() == "a")
 {
     AdditionGame("Addition game selected");
@@ -51,26 +51,31 @@ else
 {
     Console.WriteLine("Invalid option selected");
 }
+
 /* addition game code*/
 void AdditionGame(string message)
 {
     Console.WriteLine("Addition game selected");
 }
+
 /* subtraction game code*/
 void SubtractionGame(string message)
 {
     Console.WriteLine("Subtraction game selected");
 }
+
 /* multiplication game code*/
 void MultiplicationGame(string message)
 {
     Console.WriteLine("Multiplication game selected");
 }
+
 /* division game code*/
 void DivisionGame(string message)
 {
     Console.WriteLine("Division game selected");
 }
+
 /* quit game code*/
 void QuitGame(string message)
 {
