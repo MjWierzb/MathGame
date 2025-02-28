@@ -28,41 +28,45 @@ void Menu(string name)
 
     Console.WriteLine();
 
-    /* math game options*/
-    Console.WriteLine(@$"What game would you like to play today? Choose from the options below:
-A - Addition
-S - Subtraction
-M - Multiplication
-D - Division
-Q - Quit the program");
+    bool isGameOn = true;
 
-    Console.WriteLine("----------------------");
-
-    /* once menu option is chosen, run method associated with it*/
-    var gameSelected = Console.ReadLine();
-    switch (gameSelected.Trim().ToLower())
+    do
     {
-        case "a":
-            AdditionGame("Addition game");
-            break;
-        case "s":
-            SubtractionGame("Subtraction game");
-            break;
-        case "m":
-            MultiplicationGame("Multiplication game");
-            break;
-        case "d":
-            DivisionGame("Division game");
-            break;
-        case "q":
-            QuitGame("Quiting the program");
-            Environment.Exit(1);
-            break;
-        default:
-            Console.WriteLine("Invalid option selected");
-            Environment.Exit(1);
-            break;
-    }
+        /* math game options*/
+        Console.WriteLine(@$"What game would you like to play today? Choose from the options below:
+        A - Addition
+        S - Subtraction
+        M - Multiplication
+        D - Division
+        Q - Quit the program");
+
+        Console.WriteLine("----------------------");
+
+        /* once menu option is chosen, run method associated with it*/
+        var gameSelected = Console.ReadLine();
+        switch (gameSelected.Trim().ToLower())
+        {
+            case "a":
+                AdditionGame("Addition game");
+                break;
+            case "s":
+                SubtractionGame("Subtraction game");
+                break;
+            case "m":
+                MultiplicationGame("Multiplication game");
+                break;
+            case "d":
+                DivisionGame("Division game");
+                break;
+            case "q":
+                QuitGame("Quiting the program");
+                isGameOn = false;
+                break;
+            default:
+                Console.WriteLine("Invalid option selected");
+                break;
+        }
+    } while (isGameOn);
 }
 
 /* addition game code*/
@@ -99,7 +103,8 @@ void AdditionGame(string message)
 
         if (i == 4)
         {
-            Console.WriteLine($"You have completed the game. Your final score was {score} points!");
+            Console.WriteLine($"You have completed the game. Your final score was {score} points! Press any key to go back to the main menu");
+            Console.ReadLine();
         }
     }
 }
@@ -138,7 +143,7 @@ void SubtractionGame(string message)
 
         if (i == 4)
         {
-            Console.WriteLine($"You have completed the game. Your final score was {score} points!");
+            Console.WriteLine($"You have completed the game. Your final score was {score} points! Press any key to go back to the main menu");
         }
     }
 }
@@ -177,7 +182,7 @@ void MultiplicationGame(string message)
 
         if (i == 4)
         {
-            Console.WriteLine($"You have completed the game. Your final score was {score} points!");
+            Console.WriteLine($"You have completed the game. Your final score was {score} points! Press any key to go back to the main menu");
         }
     }
 }
@@ -212,7 +217,7 @@ void DivisionGame(string message)
 
         if (i == 4)
         {
-            Console.WriteLine($"You have completed the game. Your final score was {score} points!");
+            Console.WriteLine($"You have completed the game. Your final score was {score} points! Press any key to go back to the main menu");
         }
     }
 }
