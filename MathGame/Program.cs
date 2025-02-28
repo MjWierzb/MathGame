@@ -1,6 +1,6 @@
 ﻿using System.Numerics;
 
-/* define variable for user's name*/
+/* define variable for user's name input by calling GetName method*/
 string name = GetName();
 
 /* define variable for today's date*/
@@ -11,6 +11,7 @@ Console.WriteLine("----------------------");
 /*Call method for menu options*/
 Menu(name);
 
+/*Create method for user's name input*/
 string GetName()
 {
     Console.WriteLine("Please type your name:");
