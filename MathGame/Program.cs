@@ -4,10 +4,11 @@ using System.Threading.Tasks.Sources;
 /* define variable for today's date*/
 var date = DateTime.UtcNow;
 
+/*define variable to store history of games played*/
+var games = new List<string>();
+
 /* define variable for user's name input by assigning it GetName method*/
 string name = GetName();
-
-Console.WriteLine("----------------------");
 
 /*Call method for menu options*/
 Menu(name);
@@ -38,9 +39,10 @@ void Menu(string name)
         S - Subtraction
         M - Multiplication
         D - Division
+        V - View history of games played
         Q - Quit the program");
 
-        Console.WriteLine("----------------------");
+        Console.WriteLine("\n");
 
         /* once menu option is chosen, run method associated with it*/
         var gameSelected = Console.ReadLine();
@@ -58,6 +60,9 @@ void Menu(string name)
             case "d":
                 DivisionGame("Division game");
                 break;
+            case "v":
+                GetGames();
+                break;
             case "q":
                 QuitGame("Quiting the program");
                 isGameOn = false;
@@ -67,6 +72,21 @@ void Menu(string name)
                 break;
         }
     } while (isGameOn);
+}
+
+/*games history code*/
+void GetGames()
+{
+    Console.Clear();
+    Console.WriteLine("Games History");
+    Console.WriteLine("\n");
+    foreach (var game in games)
+    {
+        Console.WriteLine("Games History");
+    }
+    Console.WriteLine("\n");
+    Console.WriteLine("Press any key to return to main menu");
+    Console.ReadLine();
 }
 
 /* addition game code*/
@@ -107,6 +127,14 @@ void AdditionGame(string message)
             Console.ReadLine();
         }
     }
+
+    AddToHistory(score, "Addition");
+}
+
+/* add to history code*/
+void AddToHistory(int gameScore, string gameType)
+{
+    games.Add($"{DateTime.Now} - {gameType}: Score={gameScore}");
 }
 
 /* subtraction game code*/
@@ -146,6 +174,8 @@ void SubtractionGame(string message)
             Console.WriteLine($"You have completed the game. Your final score was {score} points! Press any key to go back to the main menu");
         }
     }
+
+    AddToHistory(score, "Subtraction");
 }
 
 /* multiplication game code*/
@@ -185,6 +215,8 @@ void MultiplicationGame(string message)
             Console.WriteLine($"You have completed the game. Your final score was {score} points! Press any key to go back to the main menu");
         }
     }
+
+    AddToHistory(score, "Multiplication");
 }
 
 /* division game code*/
@@ -220,6 +252,8 @@ void DivisionGame(string message)
             Console.WriteLine($"You have completed the game. Your final score was {score} points! Press any key to go back to the main menu");
         }
     }
+
+    AddToHistory(score, "Division");
 }
 /* quit game code*/
 void QuitGame(string message)
