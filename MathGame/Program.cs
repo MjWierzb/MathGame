@@ -10,46 +10,52 @@ var date = DateTime.UtcNow;
 
 Console.WriteLine("----------------------");
 
-/* use name and date variables to present custom message*/
-Console.WriteLine($"Hello {name.ToUpper()}. It's {date.DayOfWeek}. This is my first program, a math game selector.");
+/*Call method for menu options*/
+Menu(name, date);
 
-Console.WriteLine();
+/*Create method for Menu options*/
+void Menu(string name, DateTime date)
+{
+    /* use name and date variables to present custom message*/
+    Console.WriteLine($"Hello {name.ToUpper()}. It's {date.DayOfWeek}. This is my first program, a math game selector.");
 
-/* math game options*/
-Console.WriteLine(@$"What game would you like to play today? Choose from the options below:
+    Console.WriteLine();
+
+    /* math game options*/
+    Console.WriteLine(@$"What game would you like to play today? Choose from the options below:
 A - Addition
 S - Subtraction
 M - Multiplication
 D - Division
 Q - Quit the program");
 
-Console.WriteLine("----------------------");
+    Console.WriteLine("----------------------");
 
-/* once menu option is chosen, run method associated with it*/
-var gameSelected = Console.ReadLine();
-if (gameSelected.Trim().ToLower() == "a")
-{
-    AdditionGame("Addition game selected");
-}
-else if (gameSelected.Trim().ToLower() == "s")
-{
-    SubtractionGame("Subtraction game selected");
-}
-else if (gameSelected.Trim().ToLower() == "m")
-{
-    MultiplicationGame("Multiplication game selected");
-}
-else if (gameSelected.Trim().ToLower() == "d")
-{
-    DivisionGame("Division game selected");
-}
-else if (gameSelected.Trim().ToLower() == "q")
-{
-    QuitGame("Quiting the program");
-}
-else
-{
-    Console.WriteLine("Invalid option selected");
+    /* once menu option is chosen, run method associated with it*/
+    var gameSelected = Console.ReadLine();
+    switch (gameSelected.Trim().ToLower())
+    {
+        case "a":
+            AdditionGame("Addition game selected");
+            break;
+        case "s":
+            SubtractionGame("Subtraction game selected");
+            break;
+        case "m":
+            MultiplicationGame("Multiplication game selected");
+            break;
+        case "d":
+            DivisionGame("Division game selected");
+            break;
+        case "q":
+            QuitGame("Quiting the program");
+            Environment.Exit(1);
+            break;
+        default:
+            Console.WriteLine("Invalid option selected");
+            Environment.Exit(1);
+            break;
+    }
 }
 
 /* addition game code*/
