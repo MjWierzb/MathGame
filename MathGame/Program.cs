@@ -1,10 +1,10 @@
 ﻿using System.Numerics;
 
-/* define variable for user's name input by calling GetName method*/
-string name = GetName();
-
 /* define variable for today's date*/
 var date = DateTime.UtcNow;
+
+/* define variable for user's name input by assigning it GetName method*/
+string name = GetName();
 
 Console.WriteLine("----------------------");
 
