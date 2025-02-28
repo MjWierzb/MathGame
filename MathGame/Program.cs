@@ -1,4 +1,5 @@
 ﻿using System.Numerics;
+using System.Threading.Tasks.Sources;
 
 /* define variable for today's date*/
 var date = DateTime.UtcNow;
@@ -68,24 +69,144 @@ Q - Quit the program");
 void AdditionGame(string message)
 {
     Console.WriteLine("Addition game selected");
+
+    var random = new Random();
+    var score = 0;
+
+    int number1;
+    int number2;
+
+    for(int i = 0; i < 5; i++)
+    {
+        number1 = random.Next(1, 9);
+        number2 = random.Next(1, 9);
+
+        Console.WriteLine($"{number1} + {number2}");
+        var result = Console.ReadLine();
+
+        if (int.Parse(result) == number1 + number2)
+        {
+            Console.WriteLine("Your answer was correct!");
+            score++;
+        }
+        else
+        {
+            Console.WriteLine("Your answer was incorrect!");
+        }
+
+        if (i == 4)
+        {
+            Console.WriteLine($"You have completed the game. Your final score was {score} points!");
+        }
+    }
 }
 
 /* subtraction game code*/
 void SubtractionGame(string message)
 {
-    Console.WriteLine("Subtraction game selected");
+    Console.WriteLine("Addition game selected");
+
+    var random = new Random();
+    var score = 0;
+
+    int number1;
+    int number2;
+
+    for (int i = 0; i < 5; i++)
+    {
+        number1 = random.Next(1, 9);
+        number2 = random.Next(1, 9);
+
+        Console.WriteLine($"{number1} - {number2}");
+        var result = Console.ReadLine();
+
+        if (int.Parse(result) == number1 - number2)
+        {
+            Console.WriteLine("Your answer was correct!");
+            score++;
+        }
+        else
+        {
+            Console.WriteLine("Your answer was incorrect!");
+        }
+
+        if (i == 4)
+        {
+            Console.WriteLine($"You have completed the game. Your final score was {score} points!");
+        }
+    }
 }
 
 /* multiplication game code*/
 void MultiplicationGame(string message)
 {
-    Console.WriteLine("Multiplication game selected");
+    Console.WriteLine("Addition game selected");
+
+    var random = new Random();
+    var score = 0;
+
+    int number1;
+    int number2;
+
+    for (int i = 0; i < 5; i++)
+    {
+        number1 = random.Next(1, 9);
+        number2 = random.Next(1, 9);
+
+        Console.WriteLine($"{number1} * {number2}");
+        var result = Console.ReadLine();
+
+        if (int.Parse(result) == number1 * number2)
+        {
+            Console.WriteLine("Your answer was correct!");
+            score++;
+        }
+        else
+        {
+            Console.WriteLine("Your answer was incorrect!");
+        }
+
+        if (i == 4)
+        {
+            Console.WriteLine($"You have completed the game. Your final score was {score} points!");
+        }
+    }
 }
 
 /* division game code*/
 void DivisionGame(string message)
 {
-    Console.WriteLine("Division game selected");
+    Console.WriteLine("Addition game selected");
+
+    var random = new Random();
+    var score = 0;
+
+    int number1;
+    int number2;
+
+    for (int i = 0; i < 5; i++)
+    {
+        number1 = random.Next(1, 9);
+        number2 = random.Next(1, 9);
+
+        Console.WriteLine($"{number1} / {number2}");
+        var result = Console.ReadLine();
+
+        if (int.Parse(result) == number1 / number2)
+        {
+            Console.WriteLine("Your answer was correct!");
+            score++;
+        }
+        else
+        {
+            Console.WriteLine("Your answer was incorrect!");
+        }
+
+        if (i == 4)
+        {
+            Console.WriteLine($"You have completed the game. Your final score was {score} points!");
+        }
+    }
 }
 
 /* quit game code*/
