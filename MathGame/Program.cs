@@ -1,9 +1,7 @@
 ﻿using System.Numerics;
 
-Console.WriteLine("Please type your name:");
-
 /* define variable for user's name*/
-string name = Console.ReadLine();
+string name = GetName();
 
 /* define variable for today's date*/
 var date = DateTime.UtcNow;
@@ -11,10 +9,17 @@ var date = DateTime.UtcNow;
 Console.WriteLine("----------------------");
 
 /*Call method for menu options*/
-Menu(name, date);
+Menu(name);
+
+string GetName()
+{
+    Console.WriteLine("Please type your name:");
+    var name = Console.ReadLine();
+    return name;
+}
 
 /*Create method for Menu options*/
-void Menu(string name, DateTime date)
+void Menu(string name)
 {
     /* use name and date variables to present custom message*/
     Console.WriteLine($"Hello {name.ToUpper()}. It's {date.DayOfWeek}. This is my first program, a math game selector.");
