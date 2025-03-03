@@ -4,10 +4,18 @@ namespace MathGame
 {
     internal class Helpers
     {
-        internal static List<Game> games = new List<Game>();
+        internal static List<Game> games = new List<Game>
+        {
+            new Game { Date = new DateTime(2021, 1, 1), Score = 10, Type = GameType.Addition },
+            new Game { Date = new DateTime(2021, 1, 2), Score = 20, Type = GameType.Subtraction },
+            new Game { Date = new DateTime(2021, 1, 3), Score = 30, Type = GameType.Multiplication },
+            new Game { Date = new DateTime(2021, 1, 4), Score = 40, Type = GameType.Division },
+        };
 
         internal static void GetGames()
         {
+            var gamesToPrint = games.Where(x => x.Score > 3);
+
             Console.Clear();
             Console.WriteLine("Games History");
             Console.WriteLine("\n");
