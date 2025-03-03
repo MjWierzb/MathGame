@@ -15,13 +15,14 @@
             do
             {
                 /* math game options*/
+                Console.Clear();
                 Console.WriteLine(@$"What game would you like to play today? Choose from the options below:
-        A - Addition
-        S - Subtraction
-        M - Multiplication
-        D - Division
-        V - View history of games played
-        Q - Quit the program");
+                    A - Addition
+                    S - Subtraction
+                    M - Multiplication
+                    D - Division
+                    V - View history of games played
+                    Q - Quit the program");
 
                 Console.WriteLine("\n");
 

@@ -14,10 +14,8 @@ var games = new List<string>();
 /* define variable for user's name input by assigning it GetName method*/
 string name = GetName();
 
-menu.ShowMenu(name, date);
-
 /*Call method for menu options*/
-Menu(name);
+menu.ShowMenu(name, date);
 
 /*Create method for user's name input*/
 string GetName()

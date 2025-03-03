@@ -11,7 +11,7 @@
             Console.WriteLine("\n");
             foreach (var game in games)
             {
-                Console.WriteLine("Games History");
+                Console.WriteLine(game);
             }
             Console.WriteLine("\n");
             Console.WriteLine("Press any key to return to main menu");
