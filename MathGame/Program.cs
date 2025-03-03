@@ -12,15 +12,7 @@ var date = DateTime.UtcNow;
 var games = new List<string>();
 
 /* define variable for user's name input by assigning it GetName method*/
-string name = GetName();
+string name = Helpers.GetName();
 
 /*Call method for menu options*/
 menu.ShowMenu(name, date);
-
-/*Create method for user's name input*/
-string GetName()
-{
-    Console.WriteLine("Please type your name:");
-    var name = Console.ReadLine()!;
-    return name;
-}

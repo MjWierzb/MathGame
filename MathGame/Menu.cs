@@ -7,8 +7,9 @@
         {
             /* use name and date variables to present custom message*/
             Console.WriteLine($"Hello {name.ToUpper()}. It's {date.DayOfWeek}. This is my first program, a math game selector.");
-
-            Console.WriteLine();
+            Console.WriteLine("Press any key to show menu");
+            Console.ReadLine();
+            Console.WriteLine("\n");
 
             bool isGameOn = true;
 

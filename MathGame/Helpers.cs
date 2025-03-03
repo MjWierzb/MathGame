@@ -6,10 +6,12 @@ namespace MathGame
     {
         internal static List<Game> games = new List<Game>
         {
+            /*
             new Game { Date = new DateTime(2021, 1, 1), Score = 10, Type = GameType.Addition },
             new Game { Date = new DateTime(2021, 1, 2), Score = 20, Type = GameType.Subtraction },
             new Game { Date = new DateTime(2021, 1, 3), Score = 30, Type = GameType.Multiplication },
             new Game { Date = new DateTime(2021, 1, 4), Score = 40, Type = GameType.Division },
+            */
         };
 
         internal static void GetGames()
@@ -55,6 +57,29 @@ namespace MathGame
             result[1] = number2;
 
             return result;
+        }
+
+        internal static string ValidateResult(string result)
+        {
+            while (string.IsNullOrEmpty(result) || !Int32.TryParse(result, out _))
+            {
+                Console.WriteLine("Your answer needs to be an integer. Try again.");
+                result = Console.ReadLine()!;
+            }
+            return result;
+        }
+        internal static string GetName()
+        {
+            Console.WriteLine("Please type your name:");
+            var name = Console.ReadLine();
+
+            while (string.IsNullOrEmpty(name))
+            {
+                Console.WriteLine("Name can't be empty");
+                name = Console.ReadLine();
+            }
+
+            return name;
         }
     }
 }
