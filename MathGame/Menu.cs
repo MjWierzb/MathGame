@@ -27,7 +27,7 @@
                 Console.WriteLine("\n");
 
                 /* once menu option is chosen, run method associated with it*/
-                var gameSelected = Console.ReadLine();
+                var gameSelected = Console.ReadLine()!;
                 switch (gameSelected.Trim().ToLower())
                 {
                     case "a":

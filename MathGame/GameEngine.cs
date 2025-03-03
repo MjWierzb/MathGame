@@ -21,7 +21,7 @@
                 number2 = random.Next(1, 9);
 
                 Console.WriteLine($"{number1} + {number2}");
-                var result = Console.ReadLine();
+                var result = Console.ReadLine()!;
 
                 if (int.Parse(result) == number1 + number2)
                 {
@@ -62,7 +62,7 @@
                 number2 = random.Next(1, 9);
 
                 Console.WriteLine($"{number1} - {number2}");
-                var result = Console.ReadLine();
+                var result = Console.ReadLine()!;
 
                 if (int.Parse(result) == number1 - number2)
                 {
@@ -102,7 +102,7 @@
                 number2 = random.Next(1, 9);
 
                 Console.WriteLine($"{number1} * {number2}");
-                var result = Console.ReadLine();
+                var result = Console.ReadLine()!;
 
                 if (int.Parse(result) == number1 * number2)
                 {
@@ -136,7 +136,7 @@
                 var number2 = divisionNumbers[1];
 
                 Console.WriteLine($"{number1} / {number2}");
-                var result = Console.ReadLine();
+                var result = Console.ReadLine()!;
 
                 if (int.Parse(result) == number1 / number2)
                 {
